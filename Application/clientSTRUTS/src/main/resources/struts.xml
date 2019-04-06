@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.custom.i18n.resources" value="mesTextes" />
+    <package name="basicstruts2" extends="struts-default">
+
+        <!-- Page par défaut -->
+        <default-action-ref name="index"/>
+
+        <!-- Page de connexion -->
+        <action name="index">
+            <result>/WEB-INF/index.jsp</result>
+        </action>
+
+        <action name="menuConnexion">
+            <result>/WEB-INF/menuConnexion.jsp</result>
+        </action>
+
+        <action name="menuInscription">
+            <result>/WEB-INF/menuInscription.jsp</result>
+        </action>
+
+        <action name="menuPrincipal" class="mesActions.MenuPrincipal">
+            <result>/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="partieAnnule" class="mesActions.PartieAnnule">
+            <result>/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="annuleRejoindre" class="mesActions.AnnuleRejoindre">
+            <result>/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="deconnexion" class="mesActions.DeconnecterJoueur">
+            <result name="success">/WEB-INF/index.jsp</result>
+        </action>
+
+        <!-- Désinscrire le joueur du jeu -->
+        <action name="seDesinscrire" class="mesActions.Desinscription">
+            <result>/WEB-INF/menuConnexion.jsp</result>
+        </action>
+
+        <!-- Action gérant le formulaire de connexion -->
+        <action name="connecterUnJoueur" class="mesActions.ConnecterJoueur">
+            <result name="success">/WEB-INF/menuPrincipal.jsp</result>
+            <result name="input">/WEB-INF/menuConnexion.jsp</result>
+        </action>
+
+        <!-- Action gérant le formulaire de connexion -->
+        <action name="creerUnJoueur" class="mesActions.CreerJoueur">
+            <result name="success">/WEB-INF/index.jsp</result>
+            <result name="input">/WEB-INF/menuInscription.jsp</result>
+        </action>
+
+        <!-- Page de création de partie -->
+        <action name="menuPartieCreation" class="mesActions.MenuCreerPartie">
+            <result name="success">/WEB-INF/menuPartieCreation.jsp</result>
+        </action>
+        <action name="menuLobby" class="mesActions.CreerPartie">
+            <result name="success">/WEB-INF/loading.jsp</result>
+            <result name="input">/WEB-INF/menuPartieCreation.jsp</result>
+        </action>
+
+        <!-- Page des parties rejoignables -->
+        <action name="menuPartieRejoindre" class="mesActions.MenuRejoindrePartie">
+            <result>/WEB-INF/menuPartieRejoindre.jsp</result>
+        </action>
+
+        <action name="rejoindrePartie" class="mesActions.RejoindrePartie">
+            <result>/WEB-INF/lobby.jsp</result>
+        </action>
+
+        <!-- Page des parties observables -->
+        <action name="menuPartieObserver" class="mesActions.MenuObserverPartie">
+            <result>/WEB-INF/menuPartieObserver.jsp</result>
+        </action>
+
+        <action name="regarderPartie" class="mesActions.ObserverPartie">
+            <result>/WEB-INF/loadingPartie.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="regarderPartie2" class="mesActions.ObserverPartie">
+            <result>/WEB-INF/partieObservateur.jsp</result>
+            <result name="finPartie">/WEB-INF/resultatPartieObservateur.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="annuleObservateur" class="mesActions.AnnuleObservateur">
+            <result>/WEB-INF/menuPartieObserver.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <!-- Page des parties invitations -->
+        <action name="menuInvitations" class="mesActions.MenuInvitations">
+            <result>/WEB-INF/menuInvitations.jsp</result>
+        </action>
+
+        <action name="refresh_lobby" class="mesActions.CreerPartie">
+            <result>/WEB-INF/lobby.jsp</result>
+        </action>
+
+        <action name="reload_lobby" class="mesActions.ReloadLobby">
+            <result>/WEB-INF/lobbyReload.jsp</result>
+        </action>
+
+        <!-- Page de la partie -->
+        <action name="partie" class="mesActions.InitialiserPartie">
+            <result>/WEB-INF/partie.jsp</result>
+        </action>
+
+        <!-- Page de la partie -->
+        <action name="partie2" class="mesActions.JouerPartie">
+            <result>/WEB-INF/partieReload.jsp</result>
+            <result name="gagner">/WEB-INF/resultatPartie.jsp</result>
+            <result name="input">/WEB-INF/partie.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="jouerPartie" class="mesActions.JouerPartie">
+            <result>/WEB-INF/partie.jsp</result>
+            <result name="gagner">/WEB-INF/resultatPartie.jsp</result>
+            <result name="input">/WEB-INF/partie.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="accepterInvitation" class="mesActions.RejoindrePartie">
+            <result>/WEB-INF/lobby.jsp</result>
+            <result name="menuPrincipal">/WEB-INF/menuPrincipal.jsp</result>
+        </action>
+
+        <action name="refuserInvitation" class="mesActions.RefuserInvitation">
+            <result>/WEB-INF/menuInvitations.jsp</result>
+        </action>
+        <!-- Fin Page de la partie -->
+
+    </package>
+
+</struts>
+

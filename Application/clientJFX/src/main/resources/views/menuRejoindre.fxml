@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.MenuRejoindre">
+    <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <Button fx:id="retour" mnemonicParsing="false" onAction="#retour" text="Retour" />
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
+        </items>
+    </ToolBar>
+   <VBox alignment="CENTER" prefHeight="360.0" prefWidth="600.0">
+      <children>
+          <VBox fx:id="maBox" alignment="CENTER">
+            <children>
+               <ComboBox fx:id="selectGame" prefWidth="150.0">
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </VBox.margin></ComboBox>
+            </children>
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
+          </VBox>
+          <VBox alignment="CENTER" prefHeight="0.0" prefWidth="600.0">
+              <children>
+                  <Button mnemonicParsing="false" onAction="#valider" prefWidth="150.0" text="Valider" />
+              </children>
+            <VBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+          </VBox>
+      </children>
+   </VBox>
+</VBox>

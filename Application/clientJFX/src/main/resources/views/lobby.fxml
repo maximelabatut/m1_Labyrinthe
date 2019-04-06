@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.Lobby">
+    <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+            <Button fx:id="retour" mnemonicParsing="false" onAction="#retour" text="Retour" />
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
+        </items>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+    </ToolBar>
+   <VBox alignment="CENTER" prefHeight="360.0" prefWidth="600.0">
+      <children>
+          <Text text="En attente de lancement">
+              <font>
+                  <Font name="Arial Bold" size="30.0" />
+              </font>
+              <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+              </VBox.margin>
+          </Text>
+         <VBox fx:id="maBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" />
+          <VBox alignment="CENTER">
+              <children>
+                  <Button fx:id="valider" mnemonicParsing="false" onAction="#valider" text="Valider" />
+              </children>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+          </VBox>
+      </children>
+   </VBox>
+</VBox>
